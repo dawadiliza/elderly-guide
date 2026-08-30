@@ -81,7 +81,7 @@ DATA = {
                         'title': '3. Allow Permissions',
                         'text': 'Tap "Allow" when asked for contacts and notifications.',
                         'speech': 'Step 3: Tap Allow when asked for contacts and notifications.',
-                        'images': ['wa_step3.png']
+                       
                     },
                     {
                         'title': '4. Enter Phone Number',
@@ -93,7 +93,7 @@ DATA = {
                         'title': '5. Verify Number',
                         'text': 'Enter the 6-digit code sent to you via SMS.',
                         'speech': 'Step 5: Enter the 6-digit code sent to you via SMS.',
-                        'images': ['wa_step5.png']
+                        
                     },
                     {
                         'title': '6. Profile Setup',
@@ -186,25 +186,25 @@ DATA = {
                         'title': '4. Save Contact',
                         'text': 'Tap "Save" or the Checkmark (✓) icon at the top right to save the number.',
                         'speech': 'Step 4: Tap Save or the checkmark icon at the top right to save the number.',
-                        'images': ['phone_step4.png']
+                        
                     },
                     {
                         'title': '5. Open Recents or Contacts to Block',
                         'text': 'To block someone, go to the "Recents" tab or open your "Contacts" list.',
                         'speech': 'Step 5: To block someone, go to the Recents tab or open your Contacts list.',
-                        'images': ['phone_step5.png']
+                        
                     },
                     {
                         'title': '6. Select Number or Contact',
                         'text': 'Tap the info icon (i) or tap on the contact/number you want to block.',
                         'speech': 'Step 6: Tap the info icon or tap on the contact or number you want to block.',
-                        'images': ['phone_step6.png']
+                       
                     },
                     {
                         'title': '7. Block Contact',
                         'text': 'Scroll to the bottom, tap "Block this Caller" or "Block Contact", and tap confirm.',
                         'speech': 'Step 7: Scroll to the bottom, tap Block this Caller or Block Contact, and tap confirm.',
-                        'images': ['phone_step7.png']
+                        
                     }
                 ]
             }
@@ -299,7 +299,7 @@ DATA = {
                         'title': '५. नम्बर प्रमाणीकरण गर्नुहोस्',
                         'text': 'मेसेज (SMS) मा आएको ६ अंकको कोड राख्नुहोस्।',
                         'speech': 'पाँचौँ चरण: मेसेजमा आएको ६ अंकको कोड राख्नुहोस्।',
-                        'images': ['wa_step5.png']
+                        
                     },
                     {
                         'title': '६. प्रोफाइल मिलाउनुहोस्',
