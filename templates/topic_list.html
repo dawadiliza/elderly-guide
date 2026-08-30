@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ topics.title }} - Elderly Guide</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background-color: #f7f9f5; color: #1e3a2b; }
+
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+    .logo { font-size: 1.6rem; font-weight: 800; color: #2d5a3f; text-decoration: none; }
+    
+    .main-content { padding: 50px 8%; max-width: 700px; margin: 0 auto; text-align: center; }
+    .hero-title { font-size: 2.2rem; color: #1e3a2b; font-weight: 800; margin-bottom: 30px; }
+
+    .topics-list { display: flex; flex-direction: column; gap: 15px; }
+    .topic-card {
+      display: flex; align-items: center; justify-content: space-between;
+      background: #ffffff; border: 2px solid #e1e8df; border-radius: 18px; padding: 22px 25px;
+      text-decoration: none; color: #1e3a2b; font-size: 1.25rem; font-weight: 700;
+      text-align: left; transition: all 0.2s;
+    }
+    .topic-card:hover { border-color: #5b8266; color: #5b8266; transform: translateY(-2px); }
+    .btn-back { display: inline-block; margin-top: 35px; background: #e8efe6; color: #2d5a3f; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="/{{ lang }}" class="logo">📖 Elderly Guide</a>
+  </nav>
+
+  <div class="main-content">
+    <h1 class="hero-title">{{ topics.title }}</h1>
+
+    <div class="topics-list">
+      {% for topic in topics.items %}
+        <a href="/guide/{{ lang }}/{{ app_id }}/{{ topic.id }}" class="topic-card">
+          <span>{{ topic.title }}</span>
+          <span>➔</span>
+        </a>
+      {% endfor %}
+    </div>
+
+    <a href="/{{ lang }}" class="btn-back">{{ data.back_to_apps }}</a>
+  </div>
+
+</body>
+</html>

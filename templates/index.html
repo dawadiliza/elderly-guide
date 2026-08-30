@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elderly Guide - Welcome</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background-color: #f6f8f4; }
+
+        .hero-container {
+            max-width: 1100px; margin: 60px auto; padding: 0 40px;
+            display: flex; align-items: center; justify-content: space-between; gap: 40px;
+            animation: floatUp 0.8s ease-out;
+        }
+
+        .hero-left { flex: 1; }
+        .hero-title { font-size: 3.2rem; font-weight: 800; color: #234833; line-height: 1.15; }
+        .hero-subtitle { font-size: 1.25rem; color: #4a6353; line-height: 1.5; margin-bottom: 30px; }
+
+        .lang-card {
+            background: #ffffff; border: 2px solid #e1e8df; border-radius: 20px;
+            padding: 30px; text-align: center; max-width: 440px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            animation: floatUp 1s ease-out;
+        }
+        .lang-title { font-size: 1.2rem; font-weight: 700; color: #234833; margin-bottom: 20px; }
+        .lang-buttons { display: flex; gap: 15px; justify-content: center; }
+
+        .btn-lang {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 28px; border-radius: 30px; font-size: 1.1rem; font-weight: 700;
+            text-decoration: none; color: white; background: #3f684c; transition: all 0.3s ease;
+        }
+        .btn-lang:hover { background: #2d4f38; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+
+        .hero-right { flex: 1; display: flex; justify-content: flex-end; }
+        
+        /* New Hero Card Styling */
+        .showcase-card {
+            width: 100%;
+            max-width: 480px;
+            background: #eaf2ed;
+            border: 2px solid #e1e8df;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+        .showcase-title {
+            color: #234833;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .app-badge {
+            background: #ffffff;
+            color: #234833;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid #dbe6dd;
+        }
+
+        @keyframes floatUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-container">
+        <!-- Left Side Content -->
+        <div class="hero-left">
+            <h1 class="hero-title">Technology made simple for everyone.</h1>
+            <p class="hero-subtitle">
+                Step-by-step guides to help older adults learn and use social media with confidence. Please choose your language to get started:
+            </p>
+
+            <div class="lang-card">
+                <div class="lang-title">Choose Your Language / भाषा छान्नुहोस्</div>
+                <div class="lang-buttons">
+                    <a href="{{ url_for('app_list', lang='en') }}" class="btn-lang">🌐 English</a>
+                    <a href="{{ url_for('app_list', lang='np') }}" class="btn-lang">NP नेपाली</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Hero Display -->
+        <div class="hero-right">
+            <div class="showcase-card">
+                <div class="showcase-title">What You Will Learn</div>
+                <div class="app-grid">
+                    <div class="app-badge">📘 Facebook</div>
+                    <div class="app-badge">🟢 WhatsApp</div>
+                    <div class="app-badge">📷 Instagram</div>
+                    <div class="app-badge">💜 Viber</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
