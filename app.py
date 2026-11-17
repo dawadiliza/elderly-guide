@@ -8,7 +8,7 @@ DATA = {
         'nav_home': 'Home',
         'nav_guides': 'Guides',
         'switch_lang_code': 'np',
-        'switch_lang_btn': 'NP नेपाली',
+        'switch_lang_btn': '🇳🇵 नेपाली',
         'select_app_title': 'Select an App',
         'search_placeholder': 'Search app (e.g., Facebook, WhatsApp)...',
         'read_aloud_btn': '🔊 Listen to Guide',
@@ -80,8 +80,7 @@ DATA = {
                     {
                         'title': '3. Allow Permissions',
                         'text': 'Tap "Allow" when asked for contacts and notifications.',
-                        'speech': 'Step 3: Tap Allow when asked for contacts and notifications.',
-                       
+                        'speech': 'Step 3: Tap Allow when asked for contacts and notifications.'
                     },
                     {
                         'title': '4. Enter Phone Number',
@@ -92,8 +91,7 @@ DATA = {
                     {
                         'title': '5. Verify Number',
                         'text': 'Enter the 6-digit code sent to you via SMS.',
-                        'speech': 'Step 5: Enter the 6-digit code sent to you via SMS.',
-                        
+                        'speech': 'Step 5: Enter the 6-digit code sent to you via SMS.'
                     },
                     {
                         'title': '6. Profile Setup',
@@ -109,8 +107,7 @@ DATA = {
                     {
                         'title': '1. Open Instagram',
                         'text': 'Open the Instagram app on your mobile device.',
-                        'speech': 'Step 1: Open the Instagram app on your mobile device.',
-                       
+                        'speech': 'Step 1: Open the Instagram app on your mobile device.'
                     },
                     {
                         'title': '2. Continue with Facebook',
@@ -178,33 +175,29 @@ DATA = {
                     },
                     {
                         'title': '3. Enter Name',
-                        'text': 'Type the person\'s First Name and Last Name into the name fields.',
-                        'speech': 'Step 3: Type the person\'s First Name and Last Name into the name fields.',
+                        'text': "Type the person's First Name and Last Name into the name fields.",
+                        'speech': "Step 3: Type the person's First Name and Last Name into the name fields.",
                         'images': ['phone_step3.png']
                     },
                     {
                         'title': '4. Save Contact',
                         'text': 'Tap "Save" or the Checkmark (✓) icon at the top right to save the number.',
-                        'speech': 'Step 4: Tap Save or the checkmark icon at the top right to save the number.',
-                        
+                        'speech': 'Step 4: Tap Save or the checkmark icon at the top right to save the number.'
                     },
                     {
                         'title': '5. Open Recents or Contacts to Block',
                         'text': 'To block someone, go to the "Recents" tab or open your "Contacts" list.',
-                        'speech': 'Step 5: To block someone, go to the Recents tab or open your Contacts list.',
-                        
+                        'speech': 'Step 5: To block someone, go to the Recents tab or open your Contacts list.'
                     },
                     {
                         'title': '6. Select Number or Contact',
                         'text': 'Tap the info icon (i) or tap on the contact/number you want to block.',
-                        'speech': 'Step 6: Tap the info icon or tap on the contact or number you want to block.',
-                       
+                        'speech': 'Step 6: Tap the info icon or tap on the contact or number you want to block.'
                     },
                     {
                         'title': '7. Block Contact',
                         'text': 'Scroll to the bottom, tap "Block this Caller" or "Block Contact", and tap confirm.',
-                        'speech': 'Step 7: Scroll to the bottom, tap Block this Caller or Block Contact, and tap confirm.',
-                        
+                        'speech': 'Step 7: Scroll to the bottom, tap Block this Caller or Block Contact, and tap confirm.'
                     }
                 ]
             }
@@ -286,8 +279,7 @@ DATA = {
                     {
                         'title': '३. अनुमति (Permissions) दिनुहोस्',
                         'text': 'सम्पर्क (Contacts) र सूचनाहरूका लागि "Allow" मा थिच्नुहोस्।',
-                        'speech': 'तेस्रो चरण: सम्पर्क र सूचनाहरूका लागि अलौमा थिच्नुहोस्।',
-                       
+                        'speech': 'तेस्रो चरण: सम्पर्क र सूचनाहरूका लागि अलौमा थिच्नुहोस्।'
                     },
                     {
                         'title': '४. फोन नम्बर राख्नुहोस्',
@@ -298,8 +290,7 @@ DATA = {
                     {
                         'title': '५. नम्बर प्रमाणीकरण गर्नुहोस्',
                         'text': 'मेसेज (SMS) मा आएको ६ अंकको कोड राख्नुहोस्।',
-                        'speech': 'पाँचौँ चरण: मेसेजमा आएको ६ अंकको कोड राख्नुहोस्।',
-                        
+                        'speech': 'पाँचौँ चरण: मेसेजमा आएको ६ अंकको कोड राख्नुहोस्।'
                     },
                     {
                         'title': '६. प्रोफाइल मिलाउनुहोस्',
@@ -315,8 +306,7 @@ DATA = {
                     {
                         'title': '१. इन्स्टाग्राम खोल्नुहोस्',
                         'text': 'आफ्नो फोनमा इन्स्टाग्राम एप खोल्नुहोस्।',
-                        'speech': 'पहिलो चरण: आफ्नो फोनमा इन्स्टाग्राम एप खोल्नुहोस्।',
-                        
+                        'speech': 'पहिलो चरण: आफ्नो फोनमा इन्स्टाग्राम एप खोल्नुहोस्।'
                     },
                     {
                         'title': '२. फेसबुकबाट लग इन गर्नुहोस्',
@@ -391,26 +381,22 @@ DATA = {
                     {
                         'title': '४. सेभ (Save) गर्नुहोस्',
                         'text': 'माथि दायाँ कुनामा रहेको "Save" वा टिक (✓) चिन्हमा थिचेर नम्बर सेभ गर्नुहोस्।',
-                        'speech': 'चौथो चरण: माथि दायाँ कुनामा रहेको सेभ वा टिक चिन्हमा थिचेर नम्बर सेभ गर्नुहोस्।',
-                        
+                        'speech': 'चौथो चरण: माथि दायाँ कुनामा रहेको सेभ वा टिक चिन्हमा थिचेर नम्बर सेभ गर्नुहोस्।'
                     },
                     {
                         'title': '५. हालैका कल (Recents) वा सम्पर्क सूची खोल्नुहोस्',
                         'text': 'नम्बर ब्लक गर्न "Recents" वा "Contacts" सूची खोल्नुहोस्।',
-                        'speech': 'पाँचौँ चरण: नम्बर ब्लक गर्न रिसेन्ट्स वा कन्ट्र्याक्ट्स सूची खोल्नुहोस्।',
-                       
+                        'speech': 'पाँचौँ चरण: नम्बर ब्लक गर्न रिसेन्ट्स वा कन्ट्र्याक्ट्स सूची खोल्नुहोस्।'
                     },
                     {
                         'title': '६. ब्लक गर्नुपर्ने नम्बर छान्नुहोस्',
                         'text': 'ब्लक गर्न चाहेको नम्बर वा नामको (i) आइकन वा नम्बरमा थिच्नुहोस्।',
-                        'speech': 'छैटौँ चरण: ब्लक गर्न चाहेको नम्बर वा नामको आइकन वा नम्बरमा थिच्नुहोस्।',
-                        
+                        'speech': 'छैटौँ चरण: ब्लक गर्न चाहेको नम्बर वा नामको आइकन वा नम्बरमा थिच्नुहोस्।'
                     },
                     {
                         'title': '७. नम्बर ब्लक (Block) गर्नुहोस्',
                         'text': 'तल सारेर "Block this Caller" वा "Block Contact" मा थिच्नुहोस् र पुष्टि गर्नुहोस्।',
-                        'speech': 'सातौँ चरण: तल सारेर ब्लक दिस कसर वा ब्लक कन्ट्र्याक्टमा थिच्नुहोस् र पुष्टि गर्नुहोस्।',
-                        
+                        'speech': 'सातौँ चरण: तल सारेर ब्लक दिस कसर वा ब्लक कन्ट्र्याक्टमा थिच्नुहोस् र पुष्टि गर्नुहोस्।'
                     }
                 ]
             }
@@ -418,26 +404,19 @@ DATA = {
     }
 }
 
-# 1. Home Landing Page
 @app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/<lang>')
+def index(lang='en'):
+    if lang not in DATA:
+        lang = 'en'
+    return render_template('index.html', lang=lang, data=DATA[lang])
 
-# 2. App Selection Page (Language aware: 'en' or 'np')
 @app.route('/apps/<lang>')
 def app_list(lang):
     if lang not in DATA:
         lang = 'en'
     return render_template('app_list.html', lang=lang, data=DATA[lang])
 
-# 3. Topic Selection Page
-@app.route('/topics/<lang>/<app_id>')
-def topic_list(lang, app_id):
-    if lang not in DATA or app_id not in DATA[lang]['guides']:
-        abort(404)
-    return render_template('topic_list.html', lang=lang, app_id=app_id, data=DATA[lang])
-
-# 4. Step-by-Step Guide View Page
 @app.route('/guide/<lang>/<app_id>')
 def guide(lang, app_id):
     if lang not in DATA or app_id not in DATA[lang]['guides']:

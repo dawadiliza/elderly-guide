@@ -5,53 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ data.select_app_title }}</title>
   <style>
+    :root {
+      --bg-page: #F0F4F8;
+      --bg-card: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --primary-navy: #1E3A8A;
+      --primary-hover: #1E40AF;
+      --border-color: #CBD5E1;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background-color: #f6f8f4; color: #1e3a2b; }
-
-    .container { max-width: 650px; margin: 40px auto; padding: 0 20px; text-align: center; animation: floatUp 0.6s ease-out; }
-    .page-title { font-size: 2.8rem; font-weight: 800; color: #234833; margin-bottom: 25px; }
-
-    .search-box {
-      width: 100%; padding: 16px 25px; font-size: 1.1rem; border-radius: 50px;
-      border: 2px solid #cfd9cd; outline: none; margin-bottom: 30px; background: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02); transition: border-color 0.2s;
+    
+    body { 
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      background-color: var(--bg-page);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(191, 219, 254, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(203, 213, 225, 0.4) 0%, transparent 50%),
+        radial-gradient(#CBD5E1 0.9px, transparent 0.9px);
+      background-size: 100% 100%, 100% 100%, 26px 26px;
+      color: var(--text-main); 
+      line-height: 1.6;
+      padding: 30px 20px;
     }
-    .search-box:focus { border-color: #3f684c; }
 
-    .app-list { display: flex; flex-direction: column; gap: 15px; }
+    .top-sticky-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(240, 244, 248, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px dashed var(--border-color);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 680px;
+      margin: 0 auto 30px auto;
+      border-radius: 14px;
+    }
+
+    .home-link, .lang-switch {
+      color: var(--primary-navy);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      background: #EFF6FF;
+      border: 1.5px solid #93C5FD;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .home-link:hover, .lang-switch:hover { background: #DBEAFE; }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-title::after {
+      content: '';
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      bottom: -8px;
+      height: 4px;
+      background: #93C5FD;
+      border-radius: 2px;
+    }
+
+    .app-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
     .app-card {
-      display: flex; align-items: center; justify-content: space-between;
-      background: #ffffff; border: 2px solid #e1e8df; border-radius: 18px;
-      padding: 20px 25px; text-decoration: none; color: #234833;
-      font-size: 1.35rem; font-weight: 700; transition: all 0.3s ease;
-      animation: floatUp 0.8s ease-out;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 20px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-main);
+      box-shadow: 0 6px 20px rgba(30, 58, 138, 0.04);
+      transition: all 0.2s ease;
     }
-    .app-card:hover { border-color: #3f684c; transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .app-info { display: flex; align-items: center; gap: 15px; }
 
-    .footer-logos { display: flex; justify-content: center; gap: 20px; font-size: 2rem; margin-top: 40px; opacity: 0.8; }
+    .app-card:hover {
+      border-color: var(--primary-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(30, 58, 138, 0.08);
+      background: #FFFFFF;
+    }
 
-    @keyframes floatUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .app-icon {
+      font-size: 2.5rem;
+      margin-right: 20px;
+    }
+
+    .app-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      text-align: left;
+    }
+
+    .footer-logos {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      font-size: 1.8rem;
+      margin-top: 45px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
+  <div class="top-sticky-bar">
+    <a href="/{{ lang }}" class="home-link">🏠 {{ data.nav_home }}</a>
+    <a href="/apps/{{ data.switch_lang_code }}" class="lang-switch">{{ data.switch_lang_btn }}</a>
+  </div>
+
   <div class="container">
     <h1 class="page-title">{{ data.select_app_title }}</h1>
 
-    <input type="text" id="searchInput" onkeyup="filterApps()" class="search-box" placeholder="{{ data.search_placeholder }}">
-
-    <div class="app-list" id="appList">
+    <div class="app-grid">
       {% for app in data.apps %}
         <a href="/guide/{{ lang }}/{{ app.id }}" class="app-card">
-          <div class="app-info">
-            <span>{{ app.icon }}</span>
-            <span>{{ app.title }}</span>
-          </div>
-          <span>➔</span>
+          <div class="app-icon">{{ app.icon }}</div>
+          <div class="app-title">{{ app.title }}</div>
         </a>
       {% endfor %}
     </div>
@@ -64,17 +160,6 @@
       <span>📞</span>
     </div>
   </div>
-
-  <script>
-    function filterApps() {
-      let input = document.getElementById('searchInput').value.toLowerCase();
-      let cards = document.getElementsByClassName('app-card');
-      for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        cards[i].style.display = text.includes(input) ? "flex" : "none";
-      }
-    }
-  </script>
 
 </body>
 </html>

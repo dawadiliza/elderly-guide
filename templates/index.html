@@ -1,115 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ 'ne' if lang == 'np' else 'en' }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elderly Guide - Welcome</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; background-color: #f6f8f4; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ 'जेष्ठ नागरिक प्रविधि निर्देशिका' if lang == 'np' else 'Elderly Guide — Technology Made Simple' }}</title>
+  <style>
+    :root {
+      --bg-page: #F0F4F8;
+      --bg-card: #FFFFFF;
+      --bg-accent: #E2E8F0;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --primary-navy: #1E3A8A;
+      --primary-hover: #1E40AF;
+      --accent-blue: #E0F2FE;
+      --border-color: #CBD5E1;
+    }
 
-        .hero-container {
-            max-width: 1100px; margin: 60px auto; padding: 0 40px;
-            display: flex; align-items: center; justify-content: space-between; gap: 40px;
-            animation: floatUp 0.8s ease-out;
-        }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        .hero-left { flex: 1; }
-        .hero-title { font-size: 3.2rem; font-weight: 800; color: #234833; line-height: 1.15; }
-        .hero-subtitle { font-size: 1.25rem; color: #4a6353; line-height: 1.5; margin-bottom: 30px; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(191, 219, 254, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(203, 213, 225, 0.4) 0%, transparent 50%),
+        radial-gradient(#CBD5E1 0.9px, transparent 0.9px);
+      background-size: 100% 100%, 100% 100%, 26px 26px;
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-        .lang-card {
-            background: #ffffff; border: 2px solid #e1e8df; border-radius: 20px;
-            padding: 30px; text-align: center; max-width: 440px; box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            animation: floatUp 1s ease-out;
-        }
-        .lang-title { font-size: 1.2rem; font-weight: 700; color: #234833; margin-bottom: 20px; }
-        .lang-buttons { display: flex; gap: 15px; justify-content: center; }
+    .top-header {
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 24px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .btn-lang {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 14px 28px; border-radius: 30px; font-size: 1.1rem; font-weight: 700;
-            text-decoration: none; color: white; background: #3f684c; transition: all 0.3s ease;
-        }
-        .btn-lang:hover { background: #2d4f38; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--primary-navy);
+      text-decoration: none;
+    }
 
-        .hero-right { flex: 1; display: flex; justify-content: flex-end; }
-        
-        /* New Hero Card Styling */
-        .showcase-card {
-            width: 100%;
-            max-width: 480px;
-            background: #eaf2ed;
-            border: 2px solid #e1e8df;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-        }
-        .showcase-title {
-            color: #234833;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        .app-badge {
-            background: #ffffff;
-            color: #234833;
-            padding: 14px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border: 1px solid #dbe6dd;
-        }
+    .brand-icon {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
 
-        @keyframes floatUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    .top-lang-toggle {
+      display: inline-flex;
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 14px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .toggle-pill {
+      padding: 8px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .toggle-pill.active {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+    }
+
+    .hero-wrapper {
+      max-width: 1040px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow-tag {
+      display: inline-block;
+      background: var(--accent-blue);
+      border: 1.5px solid #38BDF8;
+      color: #0369A1;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 6px 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 3.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .start-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(30, 58, 138, 0.08);
+    }
+
+    .start-label {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 16px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 14px;
+    }
+
+    .cta-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.15s ease, background-color 0.2s ease;
+    }
+
+    .cta-btn.primary {
+      background: var(--primary-navy);
+      color: #FFFFFF;
+      box-shadow: 0 6px 16px rgba(30, 58, 138, 0.2);
+    }
+
+    .cta-btn.primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .cta-btn.secondary {
+      background: #F8FAFC;
+      color: var(--primary-navy);
+      border: 2px solid var(--primary-navy);
+    }
+
+    .cta-btn.secondary:hover {
+      background: #EFF6FF;
+      transform: translateY(-2px);
+    }
+
+    .handbook-box {
+      background: var(--bg-accent);
+      border: 2px solid var(--border-color);
+      border-radius: 26px;
+      padding: 32px 26px;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .handbook-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px dashed var(--border-color);
+    }
+
+    .handbook-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .handbook-badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .app-quick-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .quick-app-link {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: 16px;
+      padding: 15px 18px;
+      text-decoration: none;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+      transition: all 0.18s ease;
+    }
+
+    .quick-app-link:hover {
+      border-color: var(--primary-navy);
+      transform: translateX(4px);
+    }
+
+    .quick-app-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .quick-app-icon {
+      font-size: 1.6rem;
+    }
+
+    .arrow-hint {
+      color: var(--primary-navy);
+      font-weight: 800;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    @media (max-width: 860px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin: 24px auto;
+      }
+      .hero-content {
+        text-align: center;
+      }
+      .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h1 {
+        font-size: 2.35rem;
+      }
+      .cta-group {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="hero-container">
-        <!-- Left Side Content -->
-        <div class="hero-left">
-            <h1 class="hero-title">Technology made simple for everyone.</h1>
-            <p class="hero-subtitle">
-                Step-by-step guides to help older adults learn and use social media with confidence. Please choose your language to get started:
-            </p>
+  <header class="top-header">
+    <a href="/{{ lang }}" class="brand-mark">
+      <span class="brand-icon">📖</span>
+      <span>{{ 'प्रविधि साथी' if lang == 'np' else 'Elderly Guide' }}</span>
+    </a>
 
-            <div class="lang-card">
-                <div class="lang-title">Choose Your Language / भाषा छान्नुहोस्</div>
-                <div class="lang-buttons">
-                    <a href="{{ url_for('app_list', lang='en') }}" class="btn-lang">🌐 English</a>
-                    <a href="{{ url_for('app_list', lang='np') }}" class="btn-lang">NP नेपाली</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Side Hero Display -->
-        <div class="hero-right">
-            <div class="showcase-card">
-                <div class="showcase-title">What You Will Learn</div>
-                <div class="app-grid">
-                    <div class="app-badge">📘 Facebook</div>
-                    <div class="app-badge">🟢 WhatsApp</div>
-                    <div class="app-badge">📷 Instagram</div>
-                    <div class="app-badge">💜 Viber</div>
-                </div>
-            </div>
-        </div>
+    <div class="top-lang-toggle">
+      <a href="/en" class="toggle-pill {{ 'active' if lang == 'en' else '' }}">English</a>
+      <a href="/np" class="toggle-pill {{ 'active' if lang == 'np' else '' }}">नेपाली</a>
     </div>
+  </header>
+
+  <main class="hero-wrapper">
+    <div class="hero-content">
+      <span class="eyebrow-tag">
+        {{ '🔊 अडियो सहितको सजिलो निर्देशिका' if lang == 'np' else '🔊 Step-by-Step + Audio Guides' }}
+      </span>
+      
+      <h1>
+        {{ 'प्रविधि अब सबैका लागि सरल र सजिलो।' if lang == 'np' else 'Technology made simple for everyone.' }}
+      </h1>
+      
+      <p class="hero-subtitle">
+        {{ 'जेष्ठ नागरिकहरूलाई आत्मविश्वासका साथ मोबाइल फोन, फेसबुक, ह्वाट्सएप र भाइबर चलाउन सिकाउने सजिलो निर्देशिका।' if lang == 'np' else 'Clear, large-text guides with voice assistance to help older adults use smartphones and social media with confidence.' }}
+      </p>
+
+      <div class="start-card">
+        <div class="start-label">
+          {{ 'सुरु गर्न भाषा छान्नुहोस् / Choose Your Language:' if lang == 'np' else 'Choose Your Language / भाषा छान्नुहोस्:' }}
+        </div>
+        <div class="cta-group">
+          <a href="/apps/en" class="cta-btn {{ 'primary' if lang == 'en' else 'secondary' }}">🌐 English</a>
+          <a href="/apps/np" class="cta-btn {{ 'primary' if lang == 'np' else 'secondary' }}">🇳🇵 नेपाली</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="handbook-box">
+      <div class="handbook-header">
+        <span class="handbook-title">{{ 'सिकाइने विषयहरू' if lang == 'np' else 'What You Will Learn' }}</span>
+        <span class="handbook-badge">{{ '५ एपहरू' if lang == 'np' else '5 Guides' }}</span>
+      </div>
+
+      <div class="app-quick-list">
+        {% for app in data.apps %}
+          <a href="/guide/{{ lang }}/{{ app.id }}" class="quick-app-link">
+            <span class="quick-app-left">
+              <span class="quick-app-icon">{{ app.icon }}</span>
+              <span>{{ app.title }}</span>
+            </span>
+            <span class="arrow-hint">→</span>
+          </a>
+        {% endfor %}
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    {{ 'जेष्ठ नागरिकहरूको डिजिटल सहजताका लागि तयार पारिएको' if lang == 'np' else 'Designed for clear reading, large buttons, and stress-free learning.' }}
+  </footer>
 
 </body>
 </html>
